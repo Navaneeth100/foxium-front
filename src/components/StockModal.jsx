@@ -34,8 +34,17 @@ export default function StockModal({ product, onClose, refresh }) {
   };
 
   return (
-    <div className="modal-backdrop">
-      <div className="modal-dialog bg-white" style={{ padding: 16, borderRadius: 8 }}>
+    <div className="modal-backdrop" style={{
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,0.45)",
+      backdropFilter: "blur(4px)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 2000,
+    }}>
+      <div className="modal-dialog bg-white" style={{ padding: 25, borderRadius: 8, width: 450, background: "whitesmoke" }}>
         <h4 style={{ marginTop: 0 }}>{product.name}</h4>
         <p>Current Stock: {product.quantity}</p>
 
